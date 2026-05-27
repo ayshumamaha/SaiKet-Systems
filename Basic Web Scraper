@@ -1,0 +1,24 @@
+print("===== BASIC WEB SCRAPER =====")
+
+html_data = """
+<html>
+<head><title>News</title></head>
+<body>
+
+<h1>Breaking News 1</h1>
+<h1>Breaking News 2</h1>
+<h1>Breaking News 3</h1>
+
+</body>
+</html>
+"""
+
+print("\nExtracted Headlines:\n")
+
+parts = html_data.split("<h1>")
+
+for part in parts[1:]:
+
+    headline = part.split("</h1>")[0]
+
+    print(headline)
